@@ -9,7 +9,6 @@ let todos: Todo[] = [
 let idCounter = todos.length + 100;
 
 export const getAllTodos = (): Todo[] => {
-  console.log(todos);
   return todos;
 };
 
@@ -28,14 +27,14 @@ export const addTodo = (title: string): Todo => {
   return newTodo;
 };
 
-export const deleteTodoById = (id: number): boolean => {
+export const deleteTodoById = (id: number): Todo | undefined => {
   const foundTodo = todos.find((todo) => todo.id === id);
   if (foundTodo) {
     todos = todos.filter((todo) => todo.id !== id);
     console.log(todos);
-    return true;
+    return foundTodo;
   }
-  return false;
+  return undefined;
 };
 
 export const updateTodo = (newTodo: Todo): Todo | undefined => {

@@ -8,7 +8,6 @@ let todos = [
 ];
 let idCounter = todos.length + 100;
 const getAllTodos = () => {
-    console.log(todos);
     return todos;
 };
 exports.getAllTodos = getAllTodos;
@@ -32,9 +31,9 @@ const deleteTodoById = (id) => {
     if (foundTodo) {
         todos = todos.filter((todo) => todo.id !== id);
         console.log(todos);
-        return true;
+        return foundTodo;
     }
-    return false;
+    return undefined;
 };
 exports.deleteTodoById = deleteTodoById;
 const updateTodo = (newTodo) => {

@@ -17,13 +17,9 @@ app.listen(port, () => {
 app.get('/health', (req, res) => {
     const healthCheck = {
         status: 'UP',
-        timestamp: new Date().toISOString(),
+        timestamp: new Date().toLocaleString(),
         message: 'Server is healthy'
     };
     res.json(healthCheck);
 });
-// app.get('/todos', (req: Request, res: Response) => {
-//     const todos = database.findAll();
-//     res.json(todos);
-// });
 //# sourceMappingURL=index.js.map
